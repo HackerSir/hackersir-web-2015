@@ -1,54 +1,88 @@
 <!DOCTYPE HTML>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Go!HackerSir!</title>
-        <meta name="twitter:card" content="summary">
-        <meta property="og:title" content="Go!HackerSir!">
-        <meta property="og:type" content="website">
-        <meta name="application-name" content="Go!HackerSir!">
-        <meta name="mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Go!HackerSir!</title>
+    <meta name="twitter:card" content="summary">
+    <meta property="og:title" content="Go!HackerSir!">
+    <meta property="og:type" content="website">
+    <meta name="application-name" content="Go!HackerSir!">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-        <!--<link rel="stylesheet" href="//cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">-->
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
 
-        <style>
-            html, body {
-                height: 100%;
-            }
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato', sans-serif;
-            }
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-            .title {
-                font-size: 96px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">It works!</div>
-            </div>
-        </div>
-        <!--<script src="//code.jquery.com/jquery-3.1.0.min.js"></script>-->
-        <!--<script src="//cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>-->
-    </body>
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            display: table;
+            font-weight: 100;
+            font-family: 'Lato', sans-serif;
+        }
+
+        body:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: .1;
+            z-index: -1;
+            background: url(img/hacker.png) no-repeat center;
+            background-size: contain;
+        }
+
+        .container {
+            text-align: center;
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .content {
+            text-align: center;
+            display: inline-block;
+        }
+
+        h1 {
+            font-size: 72px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="ui basic segment center aligned">
+        <h1>黑客社</h1>
+        <a href="https://hackersir.org/" class="ui massive blue inverted labeled icon button">
+            <i class="linkify icon"></i>
+            黑客社網站
+        </a>
+        <br/>
+        <br/>
+        <a href="https://www.facebook.com/HackerSir.tw" class="ui massive blue inverted labeled icon button">
+            <i class="facebook icon"></i>
+            FB粉絲專頁
+        </a>
+        <br/>
+        <br/>
+        <a href="https://checkin.hackersir.org/check/ArPXi66gDM1ZVD4kTLlI"
+           class="ui massive blue inverted labeled icon button">
+            <i class="marker icon"></i>
+            社博打卡集點
+        </a>
+    </div>
+</div>
+<!--<script src="//code.jquery.com/jquery-3.1.0.min.js"></script>-->
+<!--<script src="//cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>-->
+</body>
 </html>
