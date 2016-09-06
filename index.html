@@ -48,7 +48,7 @@
             display: table-cell;
             vertical-align: middle;
         }
-        
+
         h1 {
             font-size: 72px;
             text-shadow: 4px 4px 4px #aaa;
@@ -72,14 +72,20 @@
         </a>
         <br/>
         <br/>
-        <a href="https://checkin.hackersir.org/check/ArPXi66gDM1ZVD4kTLlI"
-           class="ui massive red inverted labeled icon button">
+        <a href="javascript:void(0)" class="ui massive red inverted labeled icon button" id="checkIn">
             <i class="marker icon"></i>
             社博打卡集點
         </a>
     </div>
 </div>
-<!--<script src="//code.jquery.com/jquery-3.1.0.min.js"></script>-->
+<script src="//code.jquery.com/jquery-3.1.0.min.js"></script>
 <!--<script src="//cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>-->
+<script>
+    $(function () {
+        $('#checkIn').click(function () {
+            alert('請至 C9攤位 進行打卡');
+        });
+    });
+</script>
 </body>
 </html>
