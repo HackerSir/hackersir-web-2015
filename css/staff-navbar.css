@@ -1,0 +1,9 @@
+.navbar-default {
+    min-height: 50px;
+}
+
+nav.navbar a {
+    max-height: 50px;
+    padding: 13px;
+}
+

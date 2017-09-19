@@ -1,89 +1,403 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Go!HackerSir!</title>
-    <meta name="twitter:card" content="summary">
-    <meta property="og:title" content="Go!HackerSir!">
-    <meta property="og:type" content="website">
-    <meta name="application-name" content="Go!HackerSir!">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-
+    <meta name="description" content="逢甲大學黑客社">
+    <meta property="og:title" content="  首頁  - 逢甲大學黑客社">
+    <meta property="og:url" content="https://hackersir.org">
+    <meta property="og:image" content="https://hackersir.org/img/index-header.jpg">
+    <meta property="og:description" content="逢甲大學黑客社">
+    <title> 首頁 - 逢甲大學黑客社</title>
+    <link media="all" type="text/css" rel="stylesheet"
+          href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.5/superhero/bootstrap.min.css">
+    <link media="all" type="text/css" rel="stylesheet"
+          href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link media="all" type="text/css" rel="stylesheet" href="./css/animate.css">
+    <link media="all" type="text/css" rel="stylesheet" href="./css/octicons.css">
+    <link media="all" type="text/css" rel="stylesheet" href="./css/app.css">
+    <link media="all" type="text/css" rel="stylesheet" href="./css/tipped.css">
+    <link media="all" type="text/css" rel="stylesheet" href="./css/navbar.css">
     <style>
-        html, body {
-            height: 100%;
-        }
-
         body {
             margin: 0;
+            font-size: 20px;
+        }
+
+        section#header {
+            height: 100vh;
+            background-size: 100%;
+            background: url("./img/index-header.jpg") no-repeat;
+        }
+
+        section#header img:first-child {
+            -webkit-filter: drop-shadow(0px 0px 30px white);
+            filter: drop-shadow(0px 0px 30px white);
+            -webkit-animation-duration: 1.5s;
+        }
+
+        section#header div.flash {
+            -webkit-animation-duration: 2s;
+            -webkit-animation-delay: 1s;
+            -webkit-animation-iteration-count: infinite;
+        }
+
+        div.supershape {
+            height: 100px;
+            width: 0;
             padding: 0;
-            width: 100%;
-            display: table;
-            font-weight: 100;
-            font-family: 'Lato', sans-serif;
+            border-left: 50px solid #B7777F;
+            border-right: 50px solid #B7777F;
+            border-bottom: 25px solid transparent;
         }
 
-        body:before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: .1;
-            z-index: -1;
-            background: url(img/hacker.png) no-repeat center;
-            background-size: contain;
+        span.supershape {
+            transform: translate(-50%, 50%);
+            -webkit-filter: drop-shadow(0px 0px 30px white);
+            filter: drop-shadow(0px 0px 30px white);
         }
 
-        .container {
-            text-align: center;
-            display: table-cell;
-            vertical-align: middle;
+        section#join > div.container > div.row > div + div {
+            border-left: 1px solid darkseagreen;
+            min-height: 90vh;
         }
 
-        h1 {
-            font-size: 72px;
-            text-shadow: 4px 4px 4px #aaa;
+        section#join > div.container > div.row > div.col-sm-6 > a.btn {
+            color: white;
+        }
+
+        section#join > div.container > div.row > div.col-sm-6 > a.btn:hover {
+            color: lightblue;
+        }
+
+        hr {
+            border-style: solid;
+            border-color: indianred;
+            border-width: 1px 0 0 0;
+            border-radius: 25px;
+        }
+
+        section#activity > div.container-fluid > div.row > div + div {
+            border-left: 1px solid indianred;
+            min-height: 30vh;
+        }
+
+        p {
+            text-indent: 2em;
         }
     </style>
 </head>
 <body>
-<div class="container">
-    <div class="ui basic segment center aligned">
-        <h1>逢甲大學黑客社</h1>
-        <br/>
-        <a href="https://hackersir.org/" class="ui massive brown inverted labeled icon button">
-            <i class="linkify icon"></i>
-            黑客社網站
-        </a>
-        <br/>
-        <br/>
-        <a href="https://www.facebook.com/HackerSir.tw" class="ui massive brown inverted labeled icon button">
-            <i class="facebook icon"></i>
-            FB粉絲專頁
-        </a>
-        <br/>
-        <br/>
-        <a href="javascript:void(0)" class="ui massive red inverted labeled icon button" id="checkIn">
-            <i class="marker icon"></i>
-            社博打卡集點
+<section class="text-center" id="header">
+    <img src="./img/logo/HackerSir.png" alt="HackerSir" class="animated slideInUp"
+         style="height: 50%"/>
+    <br/>
+    <img src="./img/logo/HackerSir_Text.png" alt="HackerSir" class="animated slideInUp"
+         style="max-width: 100%; max-height: 35%"/>
+    <div class="text-light place-bottom animated flash">
+        <a href="#origin" style="text-decoration: none; color: #f0f0f0;">
+            <h3>START</h3>
+            <i class="fa fa-angle-double-down fa-5x"></i>
         </a>
     </div>
-</div>
-<script src="//code.jquery.com/jquery-3.1.0.min.js"></script>
-<!--<script src="//cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>-->
+</section>
+<nav class="navbar navbar-default">
+    <div class="navbar-head">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                data-target="#menu-navbar">
+            <span class="sr-only">Menu</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+    <div class="collapse navbar-collapse" id="menu-navbar">
+        <ul class="nav navbar-nav">
+            <li class="item">
+                <a href="#origin">起源 Origin</a>
+            </li>
+            <li class="item">
+                <a href="#target">目標 Target</a>
+            </li>
+            <li class="item">
+                <a href="#lesson">課程 Lesson</a>
+            </li>
+            <li class="item">
+                <a href="#activity">活動 Activity</a>
+            </li>
+            <li class="item">
+                <a href="#join">加入我們 Join us!</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<section id="origin" class="green">
+    <div class="container">
+        <p>
+            <strong class="lead">黑客社</strong>是由一群喜歡資訊安全的人們所創立，因緣際會之下成立了這個社團。
+        </p>
+        <br>
+        <p>我們致力推廣「
+            <strong>資訊安全</strong>」及「
+            <strong>程式設計</strong>」，秉持著「創新與實作」的理念，
+            除了推廣資訊安全的基礎概念、程式設計普及化、開源文化，同時也致力於推廣包括電子簽到、電子投票等等，
+            希望可以讓每位社員甚至每位學生都能了解到資安的重要性及體驗到更加便利、有趣的未來！
+        </p>
+        <br>
+        <br>
+        <p>如果你有興趣，歡迎戳一下下面的按鈕，了解更多關於黑客社的故事。</p>
+        <br>
+        <div class="text-center">
+            <a href="./about/club.html" type="button" class="btn btn-lg btn-primary">風起雲湧－關於黑客社</a>
+        </div>
+    </div>
+</section>
+<section id="target" class="grey">
+    <div class="container text-center">
+        <h2>兩大目標</h2>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="container supershape">
+                    <span class="fa fa-key fa-2x supershape"></span>
+                </div>
+                <h3>資訊安全</h3>
+                <br>
+            </div>
+            <div class="col-sm-6">
+                <div class="container supershape">
+                    <span class="fa fa-cogs fa-2x supershape"></span>
+                </div>
+                <h3>黑客精神</h3>
+                <br>
+            </div>
+        </div>
+        <br/>
+        <h2 class="text-center">四大支線</h2>
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="container supershape">
+                    <span class="fa fa-lock fa-2x supershape"></span>
+                </div>
+                <h3>推廣資安概念</h3>
+                <br>
+            </div>
+            <div class="col-sm-3">
+                <div class="container supershape">
+                    <span class="fa fa-terminal fa-2x supershape"></span>
+                </div>
+                <h3>程式設計普及化</h3>
+                <br>
+            </div>
+            <div class="col-sm-3">
+                <div class="container supershape">
+                    <span class="fa fa-code fa-2x supershape"></span>
+                </div>
+                <h3>提倡開放原始碼</h3>
+                <br>
+            </div>
+            <div class="col-sm-3">
+                <div class="container supershape">
+                    <span class="fa fa-shield fa-2x supershape"></span>
+                </div>
+                <h3>建立安全的E化校園</h3>
+                <br>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="lesson" class="green">
+    <div class="container">
+        <h2 class="text-center">程式設計課程</h2>
+        <hr>
+        <p>這學期我們承襲上學期的課程，依舊是以
+            <strong>Python</strong> 作為教學的語言，並且，我們記取了上學期的點點滴滴，重新編寫了教學課綱，希望可以讓社員在最短的時間內學會Python。
+        </p>
+        <br>
+        <div class="text-center">
+            <a href="./lesson/regular.html" type="button" class="btn btn-lg btn-info">我要學Python</a>
+        </div>
+        <br>
+        <h2 class="text-center">資訊安全課程</h2>
+        <hr>
+        <p>隨著資訊化時代的到來，如何在網路世界中保護自己更為重要，為了提升學生們的資安意識，我們會介紹各種資安觀念，伴隨者
+            <strong>CTF解題活動</strong> 讓大家了解各種黑客常用技巧以進行防範。
+        </p>
+        <br>
+        <div class="text-center">
+            <a href="./lesson/cooperation.html" type="button" class="btn btn-lg btn-danger disabled">我要解CTF</a>
+        </div>
+        <br>
+        <h2 class="text-center">隱藏課程</h2>
+        <hr>
+        <p class="text-center">偶爾我們可能會有神秘隱藏小社課，歡迎關注我們臉書社團。</p>
+        <br>
+        <div class="text-center">
+            <a href="https://www.facebook.com/groups/HackerSir/" target="_blank" type="button"
+               class="btn btn-lg btn-info">加關注!!</a>
+        </div>
+    </div>
+</section>
+<section id="activity" class="grey">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-4">
+                <h2 class="text-center">SITCON x HackerSir</h2>
+                <h3 class="text-center">台中定期聚</h3>
+                <br>
+                <p>
+                    我們和SITCON及興大電資同好會將一起舉辦台中定期聚，單數月由我們的合作夥伴「興大電資同好會」舉辦，雙數月則是由我們來舉辦，在定期聚裡，我們可以認識來自不同領域卻對資訊有研究的人們，互相切磋、互相琢磨，增進自己的見聞與技藝！</p>
+                <br>
+            </div>
+            <div class="col-sm-4">
+                <h2 class="text-center">HackerSir x FISA</h2>
+                <h3 class="text-center">期末/不定期聚餐</h3>
+                <br>
+                <p>我們和FISA是群同根生的好夥伴，因此我們會常常舉辦聚餐，定期聚餐部分有期末聚餐，而偶爾也有可能會出現緊急降臨的聚餐活動，只要是兩邊的社員都可以參加喔！</p>
+                <br>
+            </div>
+            <div class="col-sm-4">
+                <h2 class="text-center">中區Workshop計畫</h2>
+                <h3 class="text-center">Workshop</h3>
+                <br>
+                <p>動手做！動手玩！讓我們用一點點的時間教些基礎，剩下時間就交由各位動手玩創意，自由發揮、自由操作。</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="join" class="red">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 text-center">
+                <h2>黑客社聯絡方式</h2>
+                <br>
+                <a href="https://www.facebook.com/HackerSir.tw" class="btn btn-lg" target="_blank"><span
+                    class="fa fa-facebook-square fa-2x"></span> 粉絲專頁</a><br>
+                <a href="https://www.facebook.com/groups/HackerSir/" class="btn btn-lg" target="_blank"><span
+                    class="fa fa-facebook-square fa-2x"></span> 公開社團</a><br>
+                <a href="https://github.com/HackerSir" class="btn btn-lg" target="_blank"><span
+                    class="fa fa-github fa-2x"></span> GitHub</a><br>
+                <a href="javascript:void(0)" onclick="javascript:alert('口卡！口卡！目前沒有影片！')" class="btn btn-lg"
+                   target="_blank"><span class="fa fa-youtube-square fa-2x"></span> 活動直播</a>
+                <br>
+            </div>
+            <div class="col-sm-6">
+                <h2 class="text-center">如果你有以下任一特質：</h2>
+                <br>
+                <ul class="list-unstyled" style="margin-left: 12rem">
+                    <li>
+                        <span class="fa fa-check-square-o"></span> 喜愛新事物
+                    </li>
+                    <li>
+                        <span class="fa fa-check-square-o"></span> 對資安有興趣
+                    </li>
+                    <li>
+                        <span class="fa fa-check-square-o"></span> 喜歡Coding
+                    </li>
+                    <li>
+                        <span class="fa fa-check-square-o"></span> 想要改變世界從自己開始
+                    </li>
+                    <li>
+                        <span class="fa fa-check-square-o"></span> 想當工程師
+                    </li>
+                    <li>
+                        <span class="fa fa-check-square-o"></span> 有新鮮強壯的肝
+                    </li>
+                </ul>
+                <br>
+                <h3 class="text-center">你可以......</h3>
+                <br>
+                <div class="text-center">
+                    <a href="javascript:void(0)"
+                       onclick="javascript:alert('對不起，目前暫時不開放線上申請，請直接找幹部填入社單。\n你可以在社課、社內活動期間找到他們！')" type="button"
+                       class="btn btn-lg btn-primary disabled">加入我們！</a>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+    </div>
+</section>
+<footer class="footer">
+    <div class="container">
+        <p class="text-center">
+            Copyright &copy; 2014-2015 Hackers' Club, Feng Chia University. All rights reserved.
+        </p>
+    </div>
+</footer>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="./js/bootstrap-notify.min.js"></script>
+<script src="./js/notify.js"></script>
+<script src="./js/tipped.js"></script>
+<script src="./js/analyticstracking.js"></script>
 <script>
-    $(function () {
-        $('#checkIn').click(function () {
-            alert('請至 C9攤位 進行打卡');
+    var elementHeight = [$('section#header').outerHeight() + $('nav').outerHeight() - 40];
+    elementHeight.push(elementHeight[0] + $('section#origin').outerHeight());
+    elementHeight.push(elementHeight[1] + $('section#target').outerHeight());
+    elementHeight.push(elementHeight[2] + $('section#lesson').outerHeight());
+    elementHeight.push(elementHeight[3] + $('section#activity').outerHeight());
+    elementHeight.push(elementHeight[4] + $('section#join').outerHeight());
+
+    var navItems = $('nav>#menu-navbar>ul>li');
+
+    var resetNavbarActive = function () {
+        $(navItems).each(function () {
+            $(this).removeClass('active');
+        });
+    };
+
+    $(window).scroll(function () {
+        if ($(document).scrollTop() >= $('#header').outerHeight()) {
+            $('nav').addClass('navbar-fixed-top');
+            $("body").addClass('fixed');
+        } else {
+            $('nav').removeClass('navbar-fixed-top');
+            $("body").removeClass('fixed');
+        }
+
+        resetNavbarActive();
+        if ($(document).scrollTop() >= elementHeight[0] && $(document).scrollTop() < elementHeight[1]) {
+            $(navItems[0]).addClass('active');
+        } else if ($(document).scrollTop() >= elementHeight[1] && $(document).scrollTop() < elementHeight[2]) {
+            $(navItems[1]).addClass('active');
+        } else if ($(document).scrollTop() >= elementHeight[2] && $(document).scrollTop() < elementHeight[3]) {
+            $(navItems[2]).addClass('active');
+        } else if ($(document).scrollTop() >= elementHeight[3] && $(document).scrollTop() < elementHeight[4]) {
+            $(navItems[3]).addClass('active');
+        } else if ($(document).scrollTop() >= elementHeight[4]) {
+            $(navItems[4]).addClass('active');
+        }
+    });
+
+</script>
+<script>
+    $('a[href*=#]:not([href=#])').click(function () {
+        //console.log(location.pathname);
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            if (target.length) {
+                $('html,body').animate({
+                    scrollTop: (target.offset().top - 40 + 1) // adjust this according to your content
+                }, 1000);
+                return false;
+            }
+        }
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        Tipped.create('*', {
+            fadeIn: 0,
+            fadeOut: 0,
+            position: 'right',
+            target: 'mouse',
+            showDelay: 0,
+            hideDelay: 0,
+            offset: {x: 0, y: 15},
+            stem: false
         });
     });
 </script>
